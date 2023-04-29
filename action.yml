@@ -20,8 +20,8 @@ runs:
         python -m pip install --upgrade pip
         pip install -U sphinx
         pip install -U myst-parser
-        pip install -U https://github.com/photon-platform/photon-ablog.git
-        pip install -U https://github.com/photon-platform/photonsphinx
+        pip install -U git+https://github.com/photon-platform/photon-ablog.git
+        pip install -U git+https://github.com/photon-platform/photonsphinx.git
       shell: bash
 
     - name: Build Sphinx
