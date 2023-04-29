@@ -39,4 +39,4 @@ runs:
         github_token: ${{ github.token }}
         publish_dir: ./docs
         publish_branch: gh-pages
-      shell: bash
+      # shell: bash
