@@ -6,6 +6,10 @@ inputs:
     description: 'Python version to use'
     required: false
     default: '3.9'
+  module_repo_url:
+    description: 'GitHub URL of the current module to be pip installed'
+    required: true
+
 
 runs:
   using: 'composite'
@@ -24,6 +28,10 @@ runs:
       run: |
         pip install -U sphinx myst-parser
         pip install -U sphinx_rtd_theme
+      shell: bash
+
+    - name: Install current module
+      run: pip install -U git+${{ inputs.module_repo_url }}
       shell: bash
 
     - name: Install PHOTON tools
