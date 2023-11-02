@@ -37,7 +37,12 @@ runs:
         cd docsrc
         ablog clean
         ablog build
-        cp CNAME ../docs/CNAME
+        # Check if CNAME exists before copying
+        if [ -f CNAME ]; then
+          cp CNAME ../docs/CNAME
+        else
+          echo "No CNAME file found; skipping copy step."
+        fi
         cd ..
       shell: bash
 
