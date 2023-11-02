@@ -22,14 +22,14 @@ runs:
     - name: Upgrade Pip
       run: |
         echo 
-        echo UPGRADE PIP ***************************
+        echo UPGRADE PIP ==========================
         python -m pip install --upgrade pip
       shell: bash
 
     - name: Install Sphinx and tools
       run: |
         echo
-        echo INSTALL Sphinx and tools *************
+        echo INSTALL Sphinx and tools =============
         pip install -U sphinx myst-parser
         pip install -U sphinx_rtd_theme
       shell: bash
@@ -37,7 +37,7 @@ runs:
     - name: Install modules
       run: |
         echo
-        echo INSTALL pre modules *************
+        echo INSTALL pre modules =================
         IFS=',' read -ra ADDR <<< "${{ inputs.modules_repo_urls }}"
         for url in "${ADDR[@]}"; do
           echo " - " $url
@@ -52,7 +52,7 @@ runs:
     - name: Install PHOTON tools
       run: |
         echo
-        echo INSTALL Photon tools  *************
+        echo INSTALL Photon tools  ==============
         pip install -U git+https://github.com/photon-platform/photon-ablog.git
         pip install -U git+https://github.com/photon-platform/photon-sphinx-theme.git
       shell: bash
