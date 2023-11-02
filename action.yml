@@ -23,6 +23,7 @@ runs:
     - name: Install Sphinx and tools
       run: |
         pip install -U sphinx myst-parser
+        pip install -U sphinx_rtd_theme
       shell: bash
 
     - name: Install PHOTON tools
