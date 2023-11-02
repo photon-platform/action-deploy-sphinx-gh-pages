@@ -6,9 +6,9 @@ inputs:
     description: 'Python version to use'
     required: false
     default: '3.9'
-  module_repo_url:
-    description: 'GitHub URL of the current module to be pip installed'
-    required: true
+  module_repo_urls:
+    description: 'GitHub URLs of the current modules to be pip installed'
+    required: false
 
 
 runs:
@@ -30,9 +30,17 @@ runs:
         pip install -U sphinx_rtd_theme
       shell: bash
 
-    - name: Install current module
-      run: pip install -U git+${{ inputs.module_repo_url }}
+    - name: Install modules
+      run: |
+        IFS=',' read -ra ADDR <<< "${{ inputs.modules_repo_urls }}"
+        for url in "${ADDR[@]}"; do
+          pip install -U git+"$url"
+        done
       shell: bash
+
+    # - name: Install current module
+      # run: pip install -U git+${{ inputs.module_repo_url }}
+      # shell: bash
 
     - name: Install PHOTON tools
       run: |
