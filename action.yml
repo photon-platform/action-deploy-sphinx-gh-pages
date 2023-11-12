@@ -29,6 +29,7 @@ runs:
     - name: Install Sphinx and tools
       run: |
         echo
+        echo
         echo INSTALL Sphinx and tools =============
         pip install -U sphinx myst-parser
         pip install -U sphinx_rtd_theme
@@ -37,7 +38,8 @@ runs:
     - name: Install modules
       run: |
         echo
-        echo INSTALL pre modules =================
+        echo
+        echo INSTALL pre modules ==========================================
         IFS=',' read -ra ADDR <<< "${{ inputs.modules_repo_urls }}"
         for url in "${ADDR[@]}"; do
           echo " - " $url
@@ -52,13 +54,17 @@ runs:
     - name: Install PHOTON tools
       run: |
         echo
-        echo INSTALL Photon tools  ==============
+        echo
+        echo INSTALL Photon tools  =======================================
         pip install -U git+https://github.com/photon-platform/photon-ablog.git
         # pip install -U git+https://github.com/photon-platform/photon-sphinx-theme.git
       shell: bash
 
     - name: Build Sphinx
       run: |
+        echo
+        echo
+        echo Build Sphinx ================================================
         cd docsrc
         ablog clean
         ablog build
