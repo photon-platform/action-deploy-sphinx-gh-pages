@@ -53,7 +53,7 @@ runs:
         echo
         echo INSTALL Photon tools  =======================================
         pip install -U git+https://github.com/photon-platform/photon-ablog.git
-        pip install -U git+https://github.com/photon-platform/sphinxilator.git
+        pip install -U git+https://github.com/photon-platform/publish.git
       shell: bash
 
     - name: Build Sphinx
