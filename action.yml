@@ -32,7 +32,7 @@ runs:
         echo
         echo INSTALL Sphinx and tools =============
         pip install -U sphinx myst-parser
-        pip install -U sphinx_rtd_theme
+        # pip install -U sphinx_rtd_theme
       shell: bash
 
     - name: Install modules
@@ -52,7 +52,7 @@ runs:
         echo
         echo
         echo INSTALL Photon tools  =======================================
-        pip install -U git+https://github.com/photon-platform/photon-ablog.git
+        # pip install -U git+https://github.com/photon-platform/photon-ablog.git
         pip install -U git+https://github.com/photon-platform/publish.git
       shell: bash
 
@@ -62,8 +62,8 @@ runs:
         echo
         echo Build Sphinx ================================================
         cd docsrc
-        ablog clean
-        ablog build
+        publish clean
+        publish build
         # Check if CNAME exists before copying
         if [ -f CNAME ]; then
           cp CNAME ../docs/CNAME
