@@ -62,7 +62,7 @@ runs:
         echo
         echo Build Sphinx ================================================
         cd docsrc
-        publish clean
+        # publish clean
         publish build
         # Check if CNAME exists before copying
         if [ -f CNAME ]; then
