@@ -26,15 +26,6 @@ runs:
         python -m pip install --upgrade pip
       shell: bash
 
-    - name: Install Sphinx and tools
-      run: |
-        echo
-        echo
-        echo INSTALL Sphinx and tools =============
-        pip install -U sphinx myst-parser
-        # pip install -U sphinx_rtd_theme
-      shell: bash
-
     - name: Install modules
       run: |
         echo
@@ -51,8 +42,7 @@ runs:
       run: |
         echo
         echo
-        echo INSTALL Photon tools  =======================================
-        # pip install -U git+https://github.com/photon-platform/photon-ablog.git
+        echo INSTALL Photon publish  =======================================
         pip install -U git+https://github.com/photon-platform/publish.git
       shell: bash
 
